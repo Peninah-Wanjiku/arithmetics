@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/numbOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/arithmetic" />
+
+    <TextView
+        android:id="@+id/arithmetic"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:text=" + "
+        android:textSize="16sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/numbTwo"
+        app:layout_constraintStart_toEndOf="@id/numbOne"
+        app:layout_constraintTop_toTopOf="@id/numbOne"
+        app:layout_constraintBottom_toBottomOf="@id/numbOne"/>
+
+    <EditText
+        android:id="@+id/numbTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/arithmetic"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtAnswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Answer: "
+        android:textSize="16sp"
+        android:gravity="end"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@id/labelAnswer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numbOne"
+        app:layout_constraintBottom_toTopOf="@id/btnAdd"/>
+
+    <TextView
+        android:id="@+id/labelAnswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="answ"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtAnswer"
+        app:layout_constraintTop_toTopOf="@id/txtAnswer"
+        app:layout_constraintBottom_toBottomOf="@id/txtAnswer"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" + "
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtAnswer"
+        app:layout_constraintBottom_toTopOf="@id/btnMultiply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSubtract"/>
+
+    <Button
+        android:id="@+id/btnSubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/labelAnswer"
+        app:layout_constraintBottom_toTopOf="@id/btnDivision"
+        app:layout_constraintStart_toEndOf="@id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/btnMultiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" * "
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDivision"/>
+
+    <Button
+        android:id="@+id/btnDivision"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" / "
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSubtract"
+        app:layout_constraintStart_toEndOf="@id/btnMultiply"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
